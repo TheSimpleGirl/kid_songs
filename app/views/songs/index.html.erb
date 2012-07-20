@@ -1,0 +1,21 @@
+<h1>List of Kids Songs</h1>
+
+<ul>
+	
+		<% @songs.each do |s| %>
+	<li> <a href = "http://localhost:3000/songs/<%= s.id %>"> <img src="<%= s.url %>" > </a>	
+		<br>
+		<%= link_to "Edit", "/songs/#{s.id}/edit" %> 
+		<br>
+		<%= link_to "Delete", "/songs/#{s.id}", :method => "delete" %>
+		</li>
+		<% end %>
+	
+	
+</ul>
+
+<%= link_to "Add new song", songs_new_url %>
+
+
+
+
